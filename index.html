@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <html data-theme="default">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Aplikasi untuk mengelola jadwal Pekerjaan Rumah."/>
+    <meta name="keywords" content="Komunitas, Pamekasan, Madura, Programming, Jadwal, Pr, Manajemen, Aplikasi"/>
+    <meta name="author" content="Pamekasancode Team"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Pekerjaan Rumah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="https://pamekasancode.github.io/assets/icon.png" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h2 id="user"></h2>
+                <p>Kelola Jadwal Pekerjaan Rumahmu disini.</p>
+            </div>
+            <div>
+                <img id="btn-setting" src="assets/carbon_settings-adjust.svg" alt="icon">
+            </div>
+        </div>
+        <div class="search">
+            <div class="search-content">
+                <input type="text" id="keyword" placeholder="Cari Pekerjaan Rumah..." autocomplete="off">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="fab">
+            <i class="fa fa-pencil" id="add-modal"></i>
+        </div>
+        <div class="main">
+
+        </div>
+        <section class="section-modal" id="section-store"></section>
+        <div class="modal" id="modal-store">
+            <div class="modal-header">
+                <h4>Tambah Jadwal Pr</h4>
+            </div>
+            <div class="modal-content">
+                <form id="form-store">
+                    <div class="input">
+                        <p>Tenggat Waktu</p>
+                        <input type="date" id="tenggat" placeholder="Tenggat Waktu">
+                    </div>
+                    <div class="input">
+                        <p>Pekerjaan Rumah</p>
+                        <textarea id="pr" placeholder="Pekerjaan Rumah" autocomplete="off"></textarea>
+                    </div>
+                    <div class="input">
+                        <button type="submit">Tambah</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section class="section-modal" id="section-edit"></section>
+        <div class="modal" id="modal-edit">
+            <div class="modal-header">
+                <h4>Edit Jadwal Pr</h4>
+            </div>
+            <div class="modal-content">
+                <form id="form-edit">
+                    <div class="input">
+                        <p>Tenggat Waktu</p>
+                        <input type="date" id="tenggat-edit" placeholder="Tenggat Waktu">
+                    </div>
+                    <div class="input">
+                        <p>Pekerjaan Rumah</p>
+                        <textarea id="pr-edit" placeholder="Pekerjaan Rumah" autocomplete="off"></textarea>
+                    </div>
+                    <div class="input">
+                        <button type="submit">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="preloader">
+            <div class="preloader-content">
+                <h2>Selamat Datang di</h2>
+                <p>Aplikasi Manajemen Pekerjaan Rumah</p>
+                <div class="input">
+                    <input type="text" id="name-preloader" placeholder="Nama Depan" autocomplete="off" required>
+                </div>
+                <div class="input">
+                    <button id="btn-preloader">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-setting"></section>
+    <div class="setting">
+        <div class="setting-header">
+            <h4>Settingan</h4>
+        </div>
+        <div class="setting-content">
+            <form id="form-setting">
+                <div class="input">
+                    <p>Ubah Nama</p>
+                    <input type="text" id="name" autocomplete="off">
+                </div>
+                <div class="input">
+                    <p>Ubah Tema Kartu</p>
+                    <div class="themes">
+                        <div class="color" id="default" data-color="default"></div>
+                        <div class="color" id="blue" data-color="blue"></div>
+                        <div class="color" id="green" data-color="green"></div>
+                        <div class="color" id="dark" data-color="dark"></div>
+                    </div>
+                </div>
+                <button type="submit">Simpan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

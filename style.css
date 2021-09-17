@@ -1,0 +1,423 @@
+/** Code By Pamekasancode **/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --default-color: #FFC80F;
+    --text-default-color: #FFC80F;
+    --text-color: #000;
+    --secondary-color: #888;
+    --dark-color:#42445A;
+    --text-header: 26px;
+    --text-subheader: 18px;
+    --text-body: 16px;
+    --text-input: 14px;
+    --text-small: 13px;
+}
+
+[data-theme="default"] {
+    --default-color: #FFC80F;
+    --text-default-color: #FFC80F;
+    --dark-color:#42445A;
+}
+
+[data-theme="blue"] {
+    --default-color: #0596FF;
+    --text-default-color: #0596FF;
+    --text-color: #fff;
+}
+
+[data-theme="green"] {
+    --default-color: #15FF73;
+    --text-default-color: #15FF73;
+    --text-color: #000;
+} 
+
+[data-theme="dark"] {
+    --default-color: #2C2C2C;
+    --text-default-color: #fff;
+    --text-color: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    padding: 0 2rem;
+    margin: auto;
+    max-width: 480px;
+    position: relative;
+}
+
+.header {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header div:nth-child(2) {
+    margin-left: 20px;
+} 
+
+.header h2 {
+    font-size: var(--text-header);
+    line-height: 32px;
+}
+
+.header p {
+    color: var(--secondary-color);
+    font-size: var(--text-body);
+    margin-top: 10px;
+}
+
+.search {
+    padding: 1rem 0;
+    background-color:white;
+}
+
+.search.fixed {
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 70;
+}
+
+.search .search-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+}
+
+.search .search-content input {
+    width: 100%;
+    height: 30px;
+    outline: none   ;
+    border: none;
+    background-color: transparent;
+    font-size: var(--text-input);
+}
+
+.search .search-content i {
+    font-size: 16px;
+}
+
+.main {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    position: relative;
+    column-count: 2;
+}
+
+.main .card {
+    width: 100%;
+    background-color: var(--default-color);
+    display: inline-block;
+    padding: 1.3rem 1rem;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.main .card .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .card .card-header h4 {
+    font-size: var(--text-body);
+}
+
+.main .card .card-header i {
+    font-size: var(--text-body);
+}
+
+.main .card .card-content {
+    padding-top: 20px;
+}
+
+.main .card .card-content h4 {
+    font-size: var(--text-subheader);
+}
+
+.main .card .card-content p {
+    font-size: var(--text-small);
+    margin-top: 20px;
+}
+
+.fab {
+    position: fixed;
+    background-color:var(--dark-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    bottom: 20px;
+    color: var(--text-default-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 80;
+}
+
+.section-modal {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 90;
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background-color: white;
+    padding: 1rem 0.7rem;
+    box-sizing: border-box;
+    display: none;
+    z-index: 100;
+}
+
+.modal .modal-content {
+    padding-top: 20px;
+}
+
+.modal .modal-content .input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.modal .modal-content .input p {
+    margin-bottom: 10px;
+    font-size: var(--text-input);
+    padding-left: 1rem;
+}
+
+.modal .modal-content .input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #f4f4f4;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.modal .modal-content .input textarea {
+    width: 100%;
+    height: 70px;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: #f4f4f4;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.modal .modal-content .input button {
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+}
+
+.section-setting {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 90;
+    display: none;
+}
+
+.setting {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background-color: white;
+    box-sizing: border-box;
+    z-index: 100;
+    display: none;
+}
+
+.setting .setting-header {
+    background-color: var(--dark-color);
+    padding: 1rem 0.7rem;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.setting .setting-content {
+    padding: 1rem 0.7rem;
+    box-sizing: border-box;
+}
+
+.setting .setting-content .input {
+    margin-bottom: 30px;
+}
+
+.setting .setting-content .input p {
+    margin-bottom: 10px;
+    font-size: var(--text-input);
+    padding-left: 1rem;
+}
+
+.setting .setting-content .input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #f4f4f4;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.setting .setting-content .input .themes {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.setting .setting-content .input .themes > div {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+.setting .setting-content .input .themes #default {
+    background-color: #FFC80F;
+}
+
+.setting .setting-content .input .themes #blue {
+    background-color: #0596FF;
+}
+
+.setting .setting-content .input .themes #green {
+    background-color: #15FF73;
+}
+
+.setting .setting-content .input .themes #dark {
+    background-color: #2C2C2C;
+}
+
+.setting .setting-content button {
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+}
+
+
+.preloader {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.preloader .preloader-content {
+    max-width: 300px;
+    min-width: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.preloader .preloader-content .input {
+    margin-top: 20px;
+}
+
+.preloader .preloader-content input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #f4f4f4;
+    padding: 0.7rem 1rem;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.preloader .preloader-content button {
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+}
+
+@media (max-width: 420px) {
+    :root {
+        --text-subheader: 17px;
+        --text-body: 15px;
+        --text-input: 14px;
+        --text-small: 12px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .header div:nth-child(1) {
+        width: 90%;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --text-subheader: 16px;
+        --text-body: 14px;
+        --text-input: 13px;
+        --text-small: 11px;
+    }
+
+    .container {
+        padding: 0 0.8rem;
+    }
+
+    .header div:nth-child(1) {
+        width: 90%;
+    }
+
+    .modal {
+        width: 280px;
+    }
+
+    .setting {
+        width: 280px;
+    }
+
+    .setting .setting-content .input .themes > div {
+        width: 40px;
+        height: 40px;
+    }
+}
